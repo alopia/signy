@@ -111,7 +111,7 @@
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.18.5",
     "@babel/core": "^7.29.7",
-    "@babel/preset-typescript": "^7.29.7",
+    "@babel/preset-typescript": "^8.0.7",
     "@eslint/js": "^10.0.1",
     "@stryker-mutator/core": "^10.0.0",
     "@swc/core": "^1.16.20",
