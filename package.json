@@ -136,7 +136,7 @@
     "terser": "^5.51.2",
     "tinybench": "^6.2.2",
     "tsup": "^9.0.0",
-    "typescript": "~6.0.3",
+    "typescript": "~7.0.2",
     "vitest": "^5.0.5"
   }
 }
