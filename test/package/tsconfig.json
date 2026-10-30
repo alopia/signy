@@ -1,0 +1,8 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "rootDir": "../.."
+  },
+  "include": ["./**/*.ts", "../../src/globals.d.ts", "../support/raw.d.ts"],
+  "exclude": []
+}

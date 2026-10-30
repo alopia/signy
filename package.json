@@ -1,0 +1,142 @@
+{
+  "name": "signy",
+  "version": "1.0.0",
+  "description": "A modern UI JS framework built on signals",
+  "type": "module",
+  "module": "./dist/signy.js",
+  "types": "./dist/signy.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/signy.d.ts",
+      "import": "./dist/signy.js",
+      "default": "./dist/signy.js"
+    },
+    "./core": {
+      "types": "./dist/core/index.d.ts",
+      "import": "./dist/core/index.js",
+      "default": "./dist/core/index.js"
+    },
+    "./web": {
+      "types": "./dist/web/index.d.ts",
+      "import": "./dist/web/index.js",
+      "default": "./dist/web/index.js"
+    },
+    "./app": {
+      "types": "./dist/app/index.d.ts",
+      "import": "./dist/app/index.js",
+      "default": "./dist/app/index.js"
+    },
+    "./router": {
+      "types": "./dist/router/index.d.ts",
+      "import": "./dist/router/index.js",
+      "default": "./dist/router/index.js"
+    },
+    "./store": {
+      "types": "./dist/store/index.d.ts",
+      "import": "./dist/store/index.js",
+      "default": "./dist/store/index.js"
+    },
+    "./jsx": {
+      "types": "./dist/jsx/index.d.ts",
+      "import": "./dist/jsx/index.js",
+      "default": "./dist/jsx/index.js"
+    },
+    "./jsx-runtime": {
+      "types": "./dist/jsx/jsx-runtime.d.ts",
+      "import": "./dist/jsx/jsx-runtime.js",
+      "default": "./dist/jsx/jsx-runtime.js"
+    },
+    "./jsx-dev-runtime": {
+      "types": "./dist/jsx/jsx-runtime.d.ts",
+      "import": "./dist/jsx/jsx-runtime.js",
+      "default": "./dist/jsx/jsx-runtime.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE.md"
+  ],
+  "unpkg": "dist/signy.global.prod.js",
+  "jsdelivr": "dist/signy.global.prod.js",
+  "sideEffects": false,
+  "scripts": {
+    "build": "BUILD_MODE=modern tsup",
+    "build:all": "rm -rf dist && BUILD_MODE=all tsup",
+    "build:minified": "BUILD_MODE=minified tsup",
+    "build:legacy": "BUILD_MODE=legacy tsup",
+    "build:global": "BUILD_MODE=global tsup",
+    "dev": "BUILD_MODE=modern tsup --watch",
+    "test": "vitest run --project unit --project jsx --project types",
+    "test:browser": "vitest run --project browser",
+    "test:package": "tsc --noEmit -p test/package && publint && attw --pack . --profile esm-only && vitest run --project package",
+    "test:mutation": "stryker run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --project unit --project jsx --project types --coverage",
+    "typecheck": "tsc --noEmit && tsc --noEmit -p bench",
+    "lint": "eslint src test bench",
+    "lint:fix": "eslint src test bench --fix",
+    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.{ts,tsx}\" \"bench/**/*.ts\"",
+    "format:check": "prettier --check \"src/**/*.ts\" \"test/**/*.{ts,tsx}\" \"bench/**/*.ts\"",
+    "bench": "node bench/run.ts",
+    "bench:compare": "node bench/compare.ts",
+    "bench:solid": "node bench/solid.ts",
+    "check": "npm run lint && npm run format:check && npm run typecheck && npm run test:coverage && npm run build:all && npm run test:package",
+    "prepublishOnly": "npm run check"
+  },
+  "keywords": [
+    "ui",
+    "framework",
+    "router",
+    "reactive",
+    "state-management",
+    "typescript",
+    "jsx",
+    "signals",
+    "fine-grained-reactivity"
+  ],
+  "author": "Madalin Grigore Enescu",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alopia/signy.git"
+  },
+  "bugs": {
+    "url": "https://github.com/alopia/signy/issues"
+  },
+  "homepage": "https://github.com/alopia/signy#readme",
+  "dependencies": {
+    "htm": "^3.1.1"
+  },
+  "devDependencies": {
+    "@arethetypeswrong/cli": "^0.18.5",
+    "@babel/core": "^7.29.7",
+    "@babel/preset-typescript": "^7.29.7",
+    "@eslint/js": "^10.0.1",
+    "@stryker-mutator/core": "^10.0.0",
+    "@swc/core": "^1.16.20",
+    "@testing-library/dom": "^10.4.2",
+    "@testing-library/user-event": "^14.6.7",
+    "@types/node": "^26.6.5",
+    "@typescript-eslint/eslint-plugin": "^8.72.0",
+    "@typescript-eslint/parser": "^8.72.0",
+    "@vitest/browser-playwright": "^5.0.5",
+    "@vitest/coverage-v8": "^5.0.5",
+    "babel-plugin-jsx-dom-expressions": "^0.40.11",
+    "esbuild": "^0.28.2",
+    "eslint": "^10.13.0",
+    "fast-check": "^4.10.2",
+    "jiti": "^2.7.0",
+    "jsdom": "^30.1.3",
+    "playwright": "~1.64.0",
+    "prettier": "^3.9.10",
+    "publint": "^0.3.25",
+    "signal-polyfill": "^0.2.2",
+    "solid-js": "^1.9.17",
+    "terser": "^5.51.2",
+    "tinybench": "^6.2.2",
+    "tsup": "^9.0.0",
+    "typescript": "~6.0.3",
+    "vitest": "^5.0.5"
+  }
+}

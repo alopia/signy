@@ -1,0 +1,34 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+*.tsbuildinfo
+
+# Testing
+coverage/
+
+# Benchmarks, results are tied to one machine
+bench/.build/
+bench/results/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+
+# Mutation testing
+.stryker-tmp/
+reports/
+
+# Vitest browser mode failure screenshots
+.vitest/
