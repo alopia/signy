@@ -1,7 +1,7 @@
 {
   "name": "signy",
   "version": "1.0.0",
-  "description": "A modern UI JS framework built on signals",
+  "description": "Signy - A modern TypeScript UI library",
   "type": "module",
   "module": "./dist/signy.js",
   "types": "./dist/signy.d.ts",
